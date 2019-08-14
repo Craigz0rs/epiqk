@@ -10,5 +10,8 @@
     "@gridsome/source-wordpress": "^0.3.0",
     "gridsome": "^0.6.0",
     "vuetify": "^2.0.7"
+  },
+  "devDependencies": {
+    "webpack-node-externals": "^1.7.2"
   }
 }
