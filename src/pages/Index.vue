@@ -1,33 +1,69 @@
 <template>
   <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>Hello, world!</h1>
-   
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste tenetur suscipit explicabo! Dolores, aperiam non officia eos quod asperiores
-    </p>
+    <TheHero/>
+    <section class="grid">
+      <h2 class="heading__section">what we do</h2>
+      <div class="grid services">
+        <FeatureTile 
+          v-for="feature in features"
+          :key="feature.id"
+          :title="feature.title"
+          :description="feature.description"
+          :classes="feature.classes"
+        />
+      </div>
+    </section>
+    <section class="grid">
+      <h2 class="heading__section">JAMstack</h2>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate voluptatum placeat delectus sapiente perspiciatis officia fuga velit perferendis. Quod numquam hic quaerat quibusdam repellendus incidunt ab temporibus, quam dolore debitis quo eius id fugiat, dolorem molestias alias maiores assumenda dolores? Laboriosam iusto asperiores repellendus?</p>
 
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p>
-
+    </section>
+    <section class="grid">
+      <h2 class="heading__section">why JAMstack?</h2>
+      <div class="grid jamstack">
+        <FeatureTile
+          v-for="feature in features"
+          :key="feature.id"
+          :title="feature.title"
+          :description="feature.description"
+          :classes="feature.classes"
+        />
+      </div>
+    </section>
   </Layout>
 </template>
 
 <script>
+import TheHero from "~/components/TheHero.vue";
+import FeatureTile from "~/components/FeatureTile";
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'EpiqK | Ultra fast and secure JAMstack websites and applications'
+  },
+  components: {
+    TheHero,
+    FeatureTile
+  },
+  data() {
+    return {
+      features: [
+        {
+          id: 0,
+          title: "Web Design",
+          description: "Description goes here",
+          classes: ['feature__tile', 'tile']
+        },
+        {
+          id: 1,
+          title: "Web Development",
+          description: "Description goes here"
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style>
-.home-links a {
-  margin-right: 1rem;
-}
+
 </style>
