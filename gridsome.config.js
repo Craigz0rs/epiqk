@@ -4,8 +4,26 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const path = require('path')
+
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/assets/sass/_globals.scss'),
+      ],
+    })
+}
+
 module.exports = {
-  siteName: 'Gridsome',
+	// existing config
+}
+
+module.exports = {
+  siteName: 'Epiqk',
+  siteDescription: 'Static JAMstack website design and development agency',
+  titleTemplate: '%s | Epiqk',
   plugins: [
     {
       use: '@gridsome/source-wordpress',
@@ -26,5 +44,12 @@ module.exports = {
         featuredImagesLocalPath: './wp-images/'
       }
     }
-  ]
+  ],
+  chainWebpack (config) {
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+
+    types.forEach(type => {
+      addStyleResource(config.module.rule('scss').oneOf(type))
+    })
+	}
 }

@@ -1,33 +1,38 @@
 <template>
   <Layout>
     <TheHero/>
-    <section class="grid">
-      <h2 class="heading__section">what we do</h2>
-      <div class="grid services">
-        <FeatureTile 
-          v-for="feature in features"
-          :key="feature.id"
-          :title="feature.title"
-          :description="feature.description"
-          :classes="feature.classes"
-        />
+    <section>
+      <div class="container grid">
+        <h2 class="heading__section">what we do</h2>
+        <div class="grid services">
+          <FeatureTile 
+            v-for="feature in features"
+            :key="feature.id"
+            :title="feature.title"
+            :description="feature.description"
+            :classes="feature.classes"
+          />
+        </div>
       </div>
     </section>
-    <section class="grid">
-      <h2 class="heading__section">JAMstack</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate voluptatum placeat delectus sapiente perspiciatis officia fuga velit perferendis. Quod numquam hic quaerat quibusdam repellendus incidunt ab temporibus, quam dolore debitis quo eius id fugiat, dolorem molestias alias maiores assumenda dolores? Laboriosam iusto asperiores repellendus?</p>
-
+    <section>
+      <div class="container grid">
+        <h2 class="heading__section">JAMstack</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate voluptatum placeat delectus sapiente perspiciatis officia fuga velit perferendis. Quod numquam hic quaerat quibusdam repellendus incidunt ab temporibus, quam dolore debitis quo eius id fugiat, dolorem molestias alias maiores assumenda dolores? Laboriosam iusto asperiores repellendus?</p>
+      </div>
     </section>
-    <section class="grid">
-      <h2 class="heading__section">why JAMstack?</h2>
-      <div class="grid jamstack">
-        <FeatureTile
-          v-for="feature in features"
-          :key="feature.id"
-          :title="feature.title"
-          :description="feature.description"
-          :classes="feature.classes"
-        />
+    <section>
+      <div class="container grid">
+        <h2 class="heading__section">why JAMstack?</h2>
+        <div class="grid jamstack">
+          <FeatureTile
+            v-for="feature in features"
+            :key="feature.id"
+            :title="feature.title"
+            :description="feature.description"
+            :classes="feature.classes"
+          />
+        </div>
       </div>
     </section>
   </Layout>
@@ -38,7 +43,7 @@ import TheHero from "~/components/TheHero.vue";
 import FeatureTile from "~/components/FeatureTile";
 export default {
   metaInfo: {
-    title: 'EpiqK | Ultra fast and secure JAMstack websites and applications'
+    title: 'EpiqK | Ultra Fast and Secure Custom JAMstack Website Design and Development Agency'
   },
   components: {
     TheHero,

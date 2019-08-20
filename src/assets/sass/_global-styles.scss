@@ -1,0 +1,10 @@
+.container {
+    width: 100%;
+    max-width: $site-max-width;
+    margin: 0 auto;
+}
+
+.grid {
+    display: -ms-grid;
+    display: grid;
+}
