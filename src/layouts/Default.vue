@@ -2,8 +2,7 @@
   <div class="site-wrapper">
     <header class="header" role="banner">
       <div class="container grid header__container">
-        
-          <g-link class="header__branding" to="/">{{ $static.metaData.siteName }}</g-link>
+          <g-link class="header__branding" to="/"><Logo class="header__logo"/></g-link>        
         <nav class="nav" role="navigation">
           <g-link class="nav__link" to="/">Home</g-link>
           <g-link class="nav__link" to="/contact">Contact Us</g-link>
@@ -22,7 +21,15 @@ query {
   }
 }
 </static-query>
+<script>
+import Logo from '~/assets/images/epiqk-logo-02.svg'
 
+export default {
+  components: {
+    Logo
+  }
+}
+</script>
 <style lang="scss">
 .header {
   position: fixed;
@@ -41,8 +48,42 @@ query {
   }
 
   &__branding {
+    display: block;
     color: $font__color--highlight;
     align-self: center;
+    font-family: $font__logo;
+    line-height: 0;
+  }
+
+  &__logo {
+    fill: $font__color--highlight;
+    height: 2.5rem;
+
+    .logo__cursor-bar {
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0% {
+        fill: $font__color--highlight;
+      }
+
+      45% {
+        fill: $font__color--highlight;
+      }
+
+      55% {
+        fill: transparent;
+      }
+
+      90% {
+        fill: transparent;
+      }
+
+      100% {
+        fill: $font__color--highlight;
+      }
+    }
   }
 }
 

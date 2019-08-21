@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous&display=swap');
+
 // Variables
 
 $gutter: 2rem;
 $site-max-width: 1600px;
 
-$header-height: 4rem;
+$header-height: 5rem;
 
 // Colors
 $primary: white;
@@ -12,3 +14,5 @@ $secondary: white;
 
 $font__color--primary: rgb(1,1,1);
 $font__color--highlight: rgb(254,254,254);
+
+$font__logo: 'Righteous', cursive;

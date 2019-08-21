@@ -2,8 +2,10 @@
     <section :class="`hero ${classes}`">
         <div class="container grid hero__container">
             <div class="hero__content">
-                <h1 class="hero__heading">Ultra fast and secure websites for your business</h1>
-                <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas.</p>
+                <div v-for="slide in slides" :key="slide.id" :class="`slide slide__${slide.id} slide__active`">
+                    <h1 class="hero__heading">{{ slide.heading }}</h1>
+                    <p class="hero__text">{{ slide.text }}</p>
+                </div>
             </div>
             <div class="hero__image">
 
@@ -21,7 +23,36 @@ export default {
             default: []
         },
 
-    }
+    },
+    data() {
+        return {
+            slides: [
+                {
+                    id: 0,
+                    heading: "Ultra fast and secure websites for your business",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
+                },
+                {
+                    id: 1,
+                    heading: "Second slide",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
+                },
+                {
+                    id: 2,
+                    heading: "Third slide",
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
+                }
+            ]
+        }
+    },
+    methods: {
+        slideRoll() {
+            
+        }
+    },
+    created() {
+        this.slideRoll();
+    }    
 }
 </script>
 <style lang="scss">
