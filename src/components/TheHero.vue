@@ -3,9 +3,13 @@
         <div class="container grid hero__container">
             <div class="hero__content">
                 <h1 class="hero__heading">Ultra fast and secure websites for your business</h1>
-                <p class="hero__content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas.</p>
+                <p class="hero__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas.</p>
+            </div>
+            <div class="hero__image">
+
             </div>
         </div>
+        <div class="hero__overlay--1"></div>
     </section>
 </template>
 <script>
@@ -28,7 +32,14 @@ export default {
 
     &__container {
         display: grid;
-        grid-column: repeat(8, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+        height: 100%;
+    }
+
+    &__content {
+        grid-column: 1/4;
+        grid-row: 3/5;
+        color: $font__color--highlight;
     }
 }
 

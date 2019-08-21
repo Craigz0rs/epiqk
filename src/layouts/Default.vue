@@ -2,9 +2,8 @@
   <div class="site-wrapper">
     <header class="header" role="banner">
       <div class="container grid header__container">
-        <strong>
-          <g-link to="/">{{ $static.metaData.siteName }}</g-link>
-        </strong>
+        
+          <g-link class="header__branding" to="/">{{ $static.metaData.siteName }}</g-link>
         <nav class="nav" role="navigation">
           <g-link class="nav__link" to="/">Home</g-link>
           <g-link class="nav__link" to="/contact">Contact Us</g-link>
@@ -25,13 +24,6 @@ query {
 </static-query>
 
 <style lang="scss">
-body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
-  margin:0;
-  padding:0;
-  line-height: 1.5;
-}
-
 .header {
   position: fixed;
   top: 0;
@@ -39,12 +31,28 @@ body {
   height: $header-height;
   width: 100%;
 
+  .grid {
+    grid-template-columns: auto auto;
+  }
+
   &__container {
-    // position: relative;
+    height: 100%;
+    align-self: center;
+  }
+
+  &__branding {
+    color: $font__color--highlight;
+    align-self: center;
   }
 }
 
-.nav__link {
-  margin-left: 20px;
+.nav {
+  justify-self: end;
+  align-self: center;
+
+  &__link {
+    color: $font__color--highlight;
+    margin-left: 20px;
+  }
 }
 </style>
