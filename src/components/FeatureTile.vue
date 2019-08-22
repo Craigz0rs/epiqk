@@ -1,5 +1,5 @@
 <template>
-    <div :class="classes">
+    <div class="classes">
         <h3 class="services__title" v-html="title"></h3>
         <p class="services__description" v-html="description"></p>
     </div>
@@ -21,8 +21,7 @@ export default {
             default: ""
         },
         classes: {
-            type: Array,
-            default: ['tile']
+            type: Array
         }
     }
 }

@@ -1,10 +1,12 @@
 <template>
-    <section :class="`hero ${classes}`">
+    <section :class="`hero`">
         <div class="container grid hero__container">
             <div class="hero__content">
-                <div v-for="slide in slides" :key="slide.id" :class="`slide slide__${slide.id} slide__active`">
-                    <h1 class="hero__heading">{{ slide.heading }}</h1>
-                    <p class="hero__text">{{ slide.text }}</p>
+                <div class="hero__slide">
+                    <transition name="slide-fade" mode="out-in">
+                        <h1 :key="currentSlide.heading" class="hero__heading">{{ currentSlide.heading }}</h1>
+                    </transition>
+                    <p class="hero__text">{{ currentSlide.text }}</p>
                 </div>
             </div>
             <div class="hero__image">
@@ -18,10 +20,6 @@
 export default {
     name: "TheHero",
     props: {
-        classes: {
-            type: Array,
-            default: []
-        },
 
     },
     data() {
@@ -42,16 +40,22 @@ export default {
                     heading: "Third slide",
                     text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
                 }
-            ]
+            ],
+            currentSlide: null
         }
     },
     methods: {
-        slideRoll() {
-            
+        startInterval: function() {
+            let i = 0;
+            this.currentSlide = this.slides[i]
+            setInterval(() => {
+                i = (i < this.slides.length - 1) ? i+1 : 0 
+                this.currentSlide = this.slides[i]
+            }, 5000)
         }
     },
     created() {
-        this.slideRoll();
+        this.startInterval()
     }    
 }
 </script>
@@ -72,6 +76,22 @@ export default {
         grid-row: 3/5;
         color: $font__color--highlight;
     }
+}
+
+@keyframes hero-heading {
+
+}
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for <2.1.8 */ {
+  transform: translateX(10px);
+  opacity: 0;
 }
 
 </style>
