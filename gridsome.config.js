@@ -23,7 +23,7 @@ module.exports = {
 module.exports = {
   siteName: 'epiqꓘ',
   siteDescription: '',
-  titleTemplate: '%s | Epiqk',
+  titleTemplate: '%s',
   plugins: [
     {
       use: '@gridsome/source-wordpress',

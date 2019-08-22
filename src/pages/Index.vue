@@ -43,7 +43,7 @@ import TheHero from "~/components/TheHero.vue";
 import FeatureTile from "~/components/FeatureTile";
 export default {
   metaInfo: {
-    title: 'EpiqK | Ultra Fast and Secure Custom JAMstack Website Design and Development Agency'
+    title: 'epiqꓘ'
   },
   components: {
     TheHero,
