@@ -51,6 +51,7 @@ export default {
 .logo__wrap {
   grid-column: 2/5;
   grid-row: 2/3;
+  justify-self: center;
   align-self: center;
 }
 
