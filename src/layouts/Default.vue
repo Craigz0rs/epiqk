@@ -51,13 +51,13 @@ export default {
 .logo__wrap {
   grid-column: 2/5;
   grid-row: 2/3;
-  justify-self: center;
   align-self: center;
 }
 
     .logo {
       fill: white;
       max-height: 150px;
+      width: 100%;
     }
 
     .logo__cursor-bar {
