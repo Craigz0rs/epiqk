@@ -1,16 +1,11 @@
 <template>
   <div class="site-wrapper">
-    <header class="header" role="banner">
-      <div class="container grid header__container">
-          <g-link class="header__branding" to="/"><Logo class="header__logo"/></g-link>        
-        <nav class="nav" role="navigation">
-          <g-link class="nav__link" to="/">Home</g-link>
-          <g-link class="nav__link" to="/contact">Contact Us</g-link>
-          <g-link class="nav__link" to="/about">About</g-link>
-        </nav>
+      <div class="container grid">
+        <div class="logo__wrap">
+          <Logo class="logo"/>
+        </div>
+        <p>coming soon</p>
       </div>
-    </header>
-    <slot/>
   </div>
 </template>
 
@@ -31,37 +26,43 @@ export default {
 }
 </script>
 <style lang="scss">
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: $header-height;
-  width: 100%;
+.site-wrapper {
+  background-image: linear-gradient(180deg,#013087 0%,#00b3ff 100%); 
+  height:100vh;
 
   .grid {
-    grid-template-columns: auto auto;
-  }
-
-  &__container {
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: repeat(4, 1fr);
     height: 100%;
-    align-self: center;
-  }
 
-  &__branding {
-    display: block;
-    color: $font__color--highlight;
-    align-self: center;
-    font-family: $font__logo;
-    line-height: 0;
+    p {
+      grid-column: 2/5;
+      grid-row: 3/4;
+      justify-self: center;
+      align-self: top;
+      margin: 0;
+      color: white;
+      font-size: 2rem;
+      font-family: $font__soon;
+    }
   }
+}
 
-  &__logo {
-    fill: $font__color--highlight;
-    height: 2.5rem;
+.logo__wrap {
+  grid-column: 2/5;
+  grid-row: 2/3;
+  align-self: center;
+}
+
+    .logo {
+      fill: white;
+      max-height: 150px;
+    }
 
     .logo__cursor-bar {
       animation: blink 1s infinite;
     }
+
 
     @keyframes blink {
       0% {
@@ -84,16 +85,4 @@ export default {
         fill: $font__color--highlight;
       }
     }
-  }
-}
-
-.nav {
-  justify-self: end;
-  align-self: center;
-
-  &__link {
-    color: $font__color--highlight;
-    margin-left: 20px;
-  }
-}
 </style>

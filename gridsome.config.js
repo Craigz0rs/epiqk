@@ -21,8 +21,8 @@ module.exports = {
 }
 
 module.exports = {
-  siteName: 'Epiqk',
-  siteDescription: 'Static JAMstack website design and development agency',
+  siteName: 'epiqꓘ',
+  siteDescription: '',
   titleTemplate: '%s | Epiqk',
   plugins: [
     {
