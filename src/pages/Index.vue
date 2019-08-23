@@ -2,7 +2,9 @@
   <Layout>
     <TheHero/>
     <section>
+      <div class="hero__overlay hero__overlay--1"><Wave /></div>
       <div class="container grid">
+        
         <h2 class="heading__section">what we do</h2>
         <div class="grid services">
           <FeatureTile 
@@ -41,13 +43,15 @@
 <script>
 import TheHero from "~/components/TheHero.vue";
 import FeatureTile from "~/components/FeatureTile";
+import Wave from '~/assets/images/wave.svg'
 export default {
   metaInfo: {
     title: 'EpiqK | Ultra Fast and Secure Custom JAMstack Website Design and Development Agency'
   },
   components: {
     TheHero,
-    FeatureTile
+    FeatureTile,
+    Wave
   },
   data() {
     return {

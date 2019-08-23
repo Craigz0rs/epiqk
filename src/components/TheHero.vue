@@ -15,8 +15,9 @@
 
             </div>
         </div>
-        <div class="hero__overlay hero__overlay--1"><Wave /></div>
+        <!-- <div class="hero__overlay hero__overlay--1"><Wave /></div> -->
         <div class="hero__overlay hero__overlay--2"><Wave2 /></div>
+        <!-- <div class="hero__overlay hero__overlay--3"><Wave3 /></div> -->
     </section>
 </template>
 <script>
@@ -26,7 +27,7 @@ export default {
     name: "TheHero",
     components: {
         Wave,
-        Wave2
+        Wave2,
     },
     data() {
         return {
@@ -85,7 +86,7 @@ export default {
 
     &__overlay {
         position: absolute;
-        bottom: 0;
+        bottom: -2px;
         left: 0;
         width:100%;
 
@@ -95,12 +96,20 @@ export default {
         }
 
         &--1 {
-            fill: $color__white;
+            fill: white;
+            transform: scaleY(2.5);
             z-index: 10;
         }
         &--2 {
-            fill: rgba(1, 122, 203, 0.2);
+            // fill: rgba(1, 122, 203, 0.2);
+            fill: rgba(0, 60, 148, 0.2);
+            transform: scaleY(1.5);
             z-index: 9;
+        }
+
+        &--3 {
+            fill: rgba(0, 60, 148, 0.5);
+            z-index: 8;
         }
     }
 }
