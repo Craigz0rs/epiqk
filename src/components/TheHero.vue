@@ -6,21 +6,27 @@
                     <transition name="slide-fade" mode="out-in">
                         <h1 :key="currentSlide.heading" class="hero__heading">{{ currentSlide.heading }}</h1>
                     </transition>
-                    <p class="hero__text">{{ currentSlide.text }}</p>
+                    <transition name="slide-up" mode="out-in">
+                    <p :key="currentSlide.text" class="hero__text">{{ currentSlide.text }}</p>
+                    </transition>
                 </div>
             </div>
             <div class="hero__image">
 
             </div>
         </div>
-        <div class="hero__overlay--1"></div>
+        <div class="hero__overlay hero__overlay--1"><Wave /></div>
+        <div class="hero__overlay hero__overlay--2"><Wave2 /></div>
     </section>
 </template>
 <script>
+import Wave from '~/assets/images/wave.svg'
+import Wave2 from '~/assets/images/wave2.svg'
 export default {
     name: "TheHero",
-    props: {
-
+    components: {
+        Wave,
+        Wave2
     },
     data() {
         return {
@@ -33,12 +39,12 @@ export default {
                 {
                     id: 1,
                     heading: "Second slide",
-                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet fd cquas."
                 },
                 {
                     id: 2,
                     heading: "Third slide",
-                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, natus eveniet quas."
+                    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum repudiandae sapiente qui, f natus eveniet quas."
                 }
             ],
             currentSlide: null
@@ -76,22 +82,57 @@ export default {
         grid-row: 3/5;
         color: $font__color--highlight;
     }
-}
 
-@keyframes hero-heading {
+    &__overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width:100%;
 
+        > svg {
+            position: absolute;
+            bottom: 0;
+        }
+
+        &--1 {
+            fill: $color__white;
+            z-index: 10;
+        }
+        &--2 {
+            fill: rgba(1, 122, 203, 0.2);
+            z-index: 9;
+        }
+    }
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all .4s ease;
 }
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for <2.1.8 */ {
+.slide-fade-enter, .slide-fade-leave-to {
   transform: translateX(10px);
   opacity: 0;
+}
+
+.slide-up-enter-active {
+    animation: slide-up 0.4s ease;
+}
+
+.slide-up-leave-active {
+    animation: slide-up 0.8s reverse cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 </style>
