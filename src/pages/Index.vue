@@ -2,7 +2,7 @@
   <Layout>
     <TheHero/>
     <section>
-      <div class="hero__overlay hero__overlay--1"><Wave /></div>
+    <!-- <div class="hero__overlay hero__overlay--1"><Wave /></div> -->
       <div class="container grid">
         
         <h2 class="heading__section">what we do</h2>

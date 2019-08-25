@@ -15,7 +15,7 @@
 
             </div>
         </div>
-        <!-- <div class="hero__overlay hero__overlay--1"><Wave /></div> -->
+        <div class="hero__overlay hero__overlay--1"><Wave /></div>
         <div class="hero__overlay hero__overlay--2"><Wave2 /></div>
         <!-- <div class="hero__overlay hero__overlay--3"><Wave3 /></div> -->
     </section>
@@ -70,7 +70,7 @@ export default {
 .hero {
     height: 100vh;
     padding-top: $header-height;
-    background-image: linear-gradient(180deg,#013087 0%,#00b3ff 100%); 
+    background-image: linear-gradient(180deg,#7602c9 0%,#ff32f1 100%); 
 
     &__container {
         display: grid;
