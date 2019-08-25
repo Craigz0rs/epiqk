@@ -70,7 +70,8 @@ export default {
 .hero {
     height: 100vh;
     padding-top: $header-height;
-    background-image: linear-gradient(180deg,#7602c9 0%,#ff32f1 100%); 
+    // background-image: linear-gradient(180deg,#7602c9 0%,#ff32f1 100%); 
+    background-image: linear-gradient(180deg,#013087 0%,#00b3ff 100%); 
 
     &__container {
         display: grid;

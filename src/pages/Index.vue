@@ -64,7 +64,7 @@ export default {
         },
         {
           id: 1,
-          title: "Web Development",
+          title: "Web Dev elopment",
           description: "Description goes here"
         }
       ]
@@ -74,5 +74,8 @@ export default {
 </script>
 
 <style>
-
+.heading__section {
+  grid-column: span 8;
+  text-align: center;
+}
 </style>
