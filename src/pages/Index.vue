@@ -3,8 +3,7 @@
     <TheHero/>
     <section>
     <!-- <div class="hero__overlay hero__overlay--1"><Wave /></div> -->
-      <div class="container grid">
-        
+      <div class="container grid home-services">
         <h2 class="heading__section">what we do</h2>
         <div class="grid services">
           <FeatureTile 
@@ -18,9 +17,12 @@
       </div>
     </section>
     <section>
-      <div class="container grid">
-        <h2 class="heading__section">JAMstack</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate voluptatum placeat delectus sapiente perspiciatis officia fuga velit perferendis. Quod numquam hic quaerat quibusdam repellendus incidunt ab temporibus, quam dolore debitis quo eius id fugiat, dolorem molestias alias maiores assumenda dolores? Laboriosam iusto asperiores repellendus?</p>
+      <div class="container grid home-about">
+        <h2 class="heading__section">Why Epiqk?</h2>
+        <div class="home-about__image"></div>
+        <div class="home-about__info">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate voluptatum placeat delectus sapiente perspiciatis officia fuga velit perferendis. Quod numquam hic quaerat quibusdam repellendus incidunt ab temporibus, quam dolore debitis quo eius id fugiat, dolorem molestias alias maiores assumenda dolores? Laboriosam iusto asperiores repellendus?</p>
+        </div>
       </div>
     </section>
     <section>
@@ -28,7 +30,7 @@
         <h2 class="heading__section">why JAMstack?</h2>
         <div class="grid jamstack">
           <FeatureTile
-            v-for="feature in features"
+            v-for="feature in JamFeatures"
             :key="feature.id"
             :title="feature.title"
             :description="feature.description"
@@ -59,13 +61,52 @@ export default {
         {
           id: 0,
           title: "Web Design",
-          description: "Description goes here",
+          description: "Description goes here Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate ",
           classes: ['feature__tile', 'tile']
         },
         {
           id: 1,
-          title: "Web Dev elopment",
-          description: "Description goes here"
+          title: "Web Development",
+          description: "Description goes here Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate ",
+          classes: ['feature__tile', 'tile']
+        },
+        {
+          id: 2,
+          title: "Branding",
+          description: "Description goes here",
+          classes: ['feature__tile', 'tile']
+        },
+        {
+          id: 3,
+          title: "Item 4",
+          description: "Description goes here",
+          classes: ['feature__tile', 'tile']
+        }
+      ],
+      JamFeatures: [
+        {
+          id: 0,
+          title: "Web Design",
+          description: "Description goes here Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate ",
+          classes: ['jam__tile', 'tile']
+        },
+        {
+          id: 1,
+          title: "Web Development",
+          description: "Description goes here Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis odit expedita, recusandae possimus ex voluptate ",
+          classes: ['jam__tile', 'tile']
+        },
+        {
+          id: 2,
+          title: "Branding",
+          description: "Description goes here",
+          classes: ['jam__tile', 'tile']
+        },
+        {
+          id: 3,
+          title: "Item 4",
+          description: "Description goes here",
+          classes: ['jam__tile', 'tile']
         }
       ]
     }
@@ -73,9 +114,53 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .heading__section {
   grid-column: span 8;
   text-align: center;
+}
+
+.services {
+  grid-column: span 8;
+  grid-template-columns: repeat(8, 1fr);
+  grid-column-gap: $gutter;
+}
+
+.home-about {
+grid-column-gap: $gutter;
+
+  &__image {
+    grid-column: span 4;
+  }
+
+  &__info {
+    grid-column: 6/9;
+  }
+}
+
+.jamstack {
+  display: grid;
+  grid-column: span 4;
+  grid-template-columns: auto;
+}
+
+.jam__tile {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: $gutter;
+  grid-template-rows: auto auto;
+
+  .services__icon {
+    grid-row: span 2;
+  }
+
+  h3 {
+    text-align: left;
+    grid-column: 2/3;
+  }
+
+  p {
+    grid-column: 2/3;
+  }
 }
 </style>

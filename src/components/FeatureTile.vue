@@ -1,5 +1,6 @@
 <template>
-    <div class="classes">
+    <div :class="classes">
+        <div class="services__icon"></div>
         <h3 class="services__title" v-html="title"></h3>
         <p class="services__description" v-html="description"></p>
     </div>
@@ -27,5 +28,16 @@ export default {
 }
 </script>
 <style lang="scss">
+.feature {
+    &__tile {
+        grid-column: span 2;
+        // justify-self: center;
+    }
+}
 
+.services {
+    &__title {
+        text-align: center;
+    }
+}
 </style>

@@ -11,6 +11,7 @@
       </div>
     </header>
     <slot/>
+    <TheFooter />
   </div>
 </template>
 
@@ -23,10 +24,12 @@ query {
 </static-query>
 <script>
 import Logo from '~/assets/images/epiqk-logo-02.svg'
+import TheFooter from '~/components/TheFooter.vue'
 
 export default {
   components: {
-    Logo
+    Logo,
+    TheFooter
   }
 }
 </script>
