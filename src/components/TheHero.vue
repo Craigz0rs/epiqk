@@ -15,7 +15,7 @@
 
             </div>
         </div>
-        <div class="hero__overlay hero__overlay--1"><Wave /></div>
+        <div class="hero__overlay hero__overlay--1"><Wave1 /></div>
         <div class="hero__overlay hero__overlay--2"><Wave2 /></div>
         <!-- <div class="hero__overlay hero__overlay--3"><Wave3 /></div> -->
     </section>
@@ -23,11 +23,13 @@
 <script>
 import Wave from '~/assets/images/wave.svg'
 import Wave2 from '~/assets/images/wave2.svg'
+import Wave1 from '~/assets/images/wave1.svg'
 export default {
     name: "TheHero",
     components: {
         Wave,
         Wave2,
+        Wave1
     },
     data() {
         return {
@@ -98,7 +100,7 @@ export default {
 
         &--1 {
             fill: white;
-            transform: scaleY(2.5);
+            // transform: scaleY(2.5);
             z-index: 10;
         }
         &--2 {
