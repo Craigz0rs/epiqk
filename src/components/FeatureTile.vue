@@ -31,6 +31,7 @@ export default {
 .feature {
     &__tile {
         grid-column: span 2;
+        
         // justify-self: center;
     }
 }
